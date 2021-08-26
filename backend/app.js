@@ -1,24 +1,36 @@
-const express = require('express')
+const express = require('express');
+const db = require('./db');
 
+const swaggerUi = require('swagger-ui-express')
+const swaggerFile = require('./swagger_output.json')
+
+const http = require('http')
 const app = express()
-const port = 3000
+const port = 3000;
 
-app.listen(port, () => {
-    console.log(`JobsNet server listening at http://+:${port}`)
-})
+http.createServer(app).listen(port)
+console.log(`JobsNet server listening at http://+:${port}`);
 
-app.get('/', (req, res) => {
-    res.send('JobsNet server is running')
-})
+app.use(express.json());
+app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
-app.post('/curriculos', (req, res) => {
+app.post('/api/candidatos', (req, res) => {
+    /* #swagger.tags = ['Candidatos']
+    #swagger.description = 'Endpoint para adicionar um candidato.' */
+
+    /* #swagger.parameters['newUser'] = {
+           in: 'body',
+           description: 'Informações do candidato.',
+           required: true,
+           type: 'object'
+    } */
+
     try {
-        if (!req.body.nome) {
-            res.status(503)
-        }
+        db.insert(req.body);
+        return res.status(201).send('Cadastro realizado com sucesso')
     }
-    catch {
-        res.status(500).send('Falha ocorrida. Por favor, tente novamente.')
+    catch (e) {
+        console.log(e)
+        return res.status(500).send('Falha ocorrida. Por favor, tente novamente.');
     }
-    
-})
+});
