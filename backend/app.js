@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const db = require('./db');
 
 const swaggerUi = require('swagger-ui-express')
@@ -11,6 +12,7 @@ const port = 3000;
 http.createServer(app).listen(port)
 console.log(`JobsNet server listening at http://+:${port}`);
 
+app.use(cors());
 app.use(express.json());
 app.use('/docs', swaggerUi.serve, swaggerUi.setup(swaggerFile))
 
@@ -26,6 +28,7 @@ app.post('/api/candidatos', (req, res) => {
     } */
 
     try {
+        console.log(req.body)
         db.insert(req.body);
         return res.status(201).send('Cadastro realizado com sucesso')
     }

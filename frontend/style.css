@@ -1,0 +1,47 @@
+head, body {
+    background-image: linear-gradient(to bottom, #000000, #171413, #26211e, #322f28, #3c3f35);
+    color:hsla(44, 76%, 43%, 0.836);
+    font-family: cursive;
+}
+    .titulo,.slogan,#Cadastro{
+    text-justify: distribute;
+    text-align: center;
+    background-image: linear-gradient(to bottom, #000000, #171413, #26211e, #322f28, #3c3f35);
+        margin-block-start: 0mm;
+    }    
+    .titulo {
+    font-variant: inherit;
+    font-style: oblique;
+    
+    }
+.slogan{
+    color: rgb(169, 192, 214);
+    font-family:  Georgia, 'Times New Roman', Times, serif;
+    font-size: larger;
+    background-image: linear-gradient(to bottom, #000000, #171413, #26211e, #322f28, #3c3f35);
+    }
+.dados, .camposdoc{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+.dadospessoais, .documentos{
+    border: inset;
+    border-inline-end-width: medium;
+}
+#cadastro{
+    background-image: linear-gradient(to bottom, #000000, #171413, #26211e, #322f28, #3c3f35);
+}
+.button{
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+#button{
+    cursor: pointer;
+}

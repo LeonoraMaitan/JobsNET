@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <title>JobsNET</title>
+    <link rel="stylesheet" href="style.css">
+<script type="text/javascript" src="index.js"></script>
+</head>
+
+<body>
+    <div class="titulo">
+        <h1>JobsNET</h1>
+    </div>
+        <div class="slogan">
+            <h3>Conectamos pessoas às empresas e empresas à talentos</h3>
+        </div>
+<form>
+<div class="dadospessoais">
+        <h2 id="cadastro">Cadastre seu currículo em nosso banco de talentos e esteja mais perto de novas oportunidades:</h2>
+    <h2>DADOS PESSOAIS</h2>
+    <div class="dados">
+        <p>
+        <a>Nome Completo *</a>  <input id="nomecompleto" required name="nomecompleto" type="text" placeholder="Nome Completo"/>
+        <a>Cargo Pretendido</a>  <input name="cargo" type="text" placeholder="Cargo Pretendido"/>
+        <a>Data de Nascimento *</a>  <input name="datanasc" required type="date" placeholder="Data de Nascimento"/>
+        <a>Estado Civil</a>  <input name="estadocivil" type="text" placeholder="Estado Civil"/>
+        </p>
+        <p>
+        <a>Profissão *</a>  <input name="profissao" required type="text" placeholder="Profissão"/>    
+        <a>Sexo</a>  <input name="sexo" type="checkbox">Femino</input>  <input type="checkbox">Masculino</input>
+        </p>     
+        <p>
+        <a>Cep *</a>  <input name="cep" required type="text" placeholder="Cep" onblur="consultarCep()"/>  
+        <a>Endereço *</a>  <input name="endereco" required disabled type="text" placeholder="Endereço"/>
+        <a>Número *</a>  <input name="numero" required type="text" placeholder="Número"/>
+        <a>Complemento </a>  <input name="complemento" type="text" placeholder="Complemento"/>
+        </p>
+        <p>
+        <a>Cidade *</a>  <input name="cidade" required disabled type="text" placeholder="Cidade"/>
+        <a>Bairro *</a>  <input name="bairro" required disabled type="text" placeholder="Bairro"/>
+        <a>UF</a>  <input name="estado" required disabled type="text" placeholder="UF"/>     
+        </p>
+        <p>
+        <a>Telefone Fixo 1</a>  <input name="fixo-1" type="tel" placeholder="Telefone Fixo 1"/>
+        <a>Telefone Fixo 2</a>  <input name="fixo-2" type="tel" placeholder="Telefone Fixo 2"/>
+        <a>Celular *</a>  <input name="celular" required type="tel" placeholder="Celular"/>
+        <a>Contato</a>  <input name="contato" type="text" placeholder="Contato"/>
+        </p>
+        <p>
+        <a>E-mail *</a>  <input name="e-mail" required type="email" placeholder="Ex: myname@email.com"/>
+        </p>
+    </div>
+</div>
+<div class="documentos">
+    <H2>DOCUMENTOS</H2>
+        <div class="camposdoc">
+        <p>
+        <a>Identidade *</a>  <input name="identidade" required type="text" placeholder="Identidade"/>
+        <a>CPF *</a>  <input name="cpf" required type="text" placeholder="CPF"/>   
+        </p>
+        <p>
+        <a>Possui Veículo</a>  <input name="veículo" type="checkbox">Sim</input><input type="checkbox">Não</input>
+        </p>
+            <div class="habilitacao">
+            <a>Habilitação</a>  <input name="habilitacao" type="checkbox">A</input><input type="checkbox">B</input><input type="checkbox">C</input><input type="checkbox">D</input><input type="checkbox">E</input>
+            </div>
+        </div>
+</div>   
+    <div class="button">
+    <button id= "button" name="btn-enviar" type="submit">Enviar</button>
+    <button id= "button" name="btn-enviar" type="reset">Cancelar</button>
+    </div>
+</form>
+</body>
+<script>
+    const form = document.getElementsByTagName('form')[0];
+    form.addEventListener('submit', handleSubmit);
+</script>
+</html>
